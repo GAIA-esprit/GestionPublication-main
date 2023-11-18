@@ -36,6 +36,10 @@ struct Home: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 22,height: 22)
                             .foregroundColor(.primary)
+                        
+                        
+                        
+                        
                     }
                 }
                 .padding(.horizontal)
