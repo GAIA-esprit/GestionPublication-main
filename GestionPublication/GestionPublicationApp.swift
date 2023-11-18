@@ -14,7 +14,7 @@ struct GestionPublicationApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                MainTabView()
+                ContentView()
                 
             }
                 

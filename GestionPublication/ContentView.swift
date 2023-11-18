@@ -33,7 +33,7 @@ struct ContentView: View {
                 .offset(x:showMenu ? 0: -300 , y : 0)
                 .background(showMenu ? Color.white: Color.clear)
         }
-        .navigationTitle(" Home")
+        .navigationTitle("EarthWise")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
             ToolbarItem(placement : .navigationBarLeading) {
