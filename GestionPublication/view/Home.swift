@@ -55,6 +55,7 @@ struct Home: View {
              Spacer()
         }
     }
+    
 }
 
 struct Home_Previews: PreviewProvider {
@@ -62,3 +63,4 @@ struct Home_Previews: PreviewProvider {
        ContentView()
     }
 }
+

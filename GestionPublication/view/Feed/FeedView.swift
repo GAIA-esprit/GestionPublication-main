@@ -14,7 +14,7 @@ struct FeedView: View {
         ScrollView {
             LazyVStack{
                 ForEach(0...20, id: \ .self  ){
-                    _ in  EarthWiseRowView()
+                    _ in   EarthWiseRowView(postViewModel: PostViewModel())
                         .padding()
                     
                     }
@@ -50,3 +50,4 @@ struct FeedView_Previews: PreviewProvider {
         FeedView()
     }
 }
+

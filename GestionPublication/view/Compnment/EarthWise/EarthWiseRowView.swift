@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EarthWiseRowView: View {
+    @StateObject var postViewModel: PostViewModel
+
     var body: some View {
         VStack( alignment: .leading){
             HStack(alignment : .top, spacing: 12){
@@ -72,6 +74,9 @@ struct EarthWiseRowView: View {
             }
             .padding()
             .foregroundColor(.gray)
+            .onAppear{
+                postViewModel.fetchPosts()
+            }
             
             Divider()
         }
@@ -81,6 +86,7 @@ struct EarthWiseRowView: View {
 
 struct EarthWiseRowView_Previews: PreviewProvider {
     static var previews: some View {
-        EarthWiseRowView()
+        EarthWiseRowView(postViewModel: PostViewModel())
     }
 }
+
