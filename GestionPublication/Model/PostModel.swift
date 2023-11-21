@@ -1,28 +1,17 @@
-//
-//  PostModel.swift
-//  GestionPublication
-//
-//  Created by Mac2021 on 19/11/2023.
-//
-import Foundation
-
-struct Post: Codable, Hashable {
-    var title : String // Add a unique identifier
+struct PostModel: Identifiable, Codable, Hashable  {
+    var id: String
+    var iduser: String
+    var title: String
     var content: String
     var author: String
+    var __v: Int
 
-}
-
-
-//struct fetchGuideReviews : Codable {
-//    let statusCode : Int
-//    let message : String
-//    let guide : Guide
-//}
-
-
-struct fetchPostResponse : Decodable {
-    let Posts : [Post]
-    let message : String
-    let statusCode : Int
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case iduser
+        case title
+        case content
+        case author
+        case __v
+    }
 }

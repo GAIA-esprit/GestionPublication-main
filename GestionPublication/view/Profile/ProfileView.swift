@@ -4,6 +4,7 @@ struct ProfileView: View {
     @State private var selectionFilter : EarthWiseFilterViewModel = .post
     @Environment(\.presentationMode) var mode
     @Namespace var animation
+    @ObservedObject var postViewModel = PostViewModel()
 
 
     var body: some View {
@@ -58,13 +59,13 @@ extension ProfileView {
             
                 .frame(width: 72, height: 72)
                 .offset(x: 16 , y:24)
-               
+            
         }
         .frame(height: 96)
         
     }
     var actionButtons : some View {
-         
+        
         HStack(spacing: 12){
             Spacer()
             Image(systemName: "bell.badge")
@@ -130,10 +131,10 @@ extension ProfileView {
             }
             
         }
-     
         
         
-       
+        
+        
         .padding(.horizontal)
     }
     var earthwiseFilterBar : some View {
@@ -164,7 +165,7 @@ extension ProfileView {
                         self.selectionFilter = item
                     }
                     
-               }
+                }
             }
         }
         .overlay(Divider().offset(x:0,y:16))
@@ -172,10 +173,19 @@ extension ProfileView {
     var postsView : some View {
         ScrollView {
             LazyVStack {
-                ForEach(0 ... 9 , id : \ .self) { _ in
-                    EarthWiseRowView(postViewModel: PostViewModel())
-                        .padding()
-                    
+                ZStack( alignment: .bottomTrailing){
+                    ScrollView {
+                        LazyVStack{
+                            ForEach(postViewModel.posts) { post in
+                                EarthWiseRowView(author: post.author , iduser: post.iduser, content: post.content)
+                            }
+                            .padding()
+                            
+                        }
+                    }
+                    .onAppear{
+                        postViewModel.fetchPosts()
+                    }
                 }
             }
         }

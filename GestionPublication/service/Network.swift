@@ -20,6 +20,6 @@ struct Network {
 
     //post routes
 
-    static let fetchPostUrl = BASE_URL + "/Posts"
+    static let fetchPostUrl = BASE_URL + "/posts"
 
 }

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct EarthWiseRowView: View {
-    @StateObject var postViewModel: PostViewModel
-
+    @State var author : String
+    @State var iduser : String
+    @State var content : String
+   
+    
+    
     var body: some View {
         VStack( alignment: .leading){
             HStack(alignment : .top, spacing: 12){
@@ -19,9 +23,9 @@ struct EarthWiseRowView: View {
                 VStack( alignment: .leading,spacing: 4){
                    
                     HStack{
-                        Text("yesser zaghdoudi")
+                        Text(author)
                             .font(.subheadline).bold()
-                        Text("@yesserzagh")
+                        Text(iduser)
                             .foregroundColor(.gray)
                             .font(.caption)
                         Text("2W")
@@ -29,7 +33,7 @@ struct EarthWiseRowView: View {
                             .font(.caption)
                     }
                     
-                    Text( " I belive in ReCycle")
+                    Text( content)
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
                 }
@@ -74,9 +78,7 @@ struct EarthWiseRowView: View {
             }
             .padding()
             .foregroundColor(.gray)
-            .onAppear{
-                postViewModel.fetchPosts()
-            }
+           
             
             Divider()
         }
@@ -86,7 +88,7 @@ struct EarthWiseRowView: View {
 
 struct EarthWiseRowView_Previews: PreviewProvider {
     static var previews: some View {
-        EarthWiseRowView(postViewModel: PostViewModel())
+        EarthWiseRowView(author: "yesser" , iduser: "@yesser", content: "hjsfdgfqhkjsdhkqrsk")
     }
 }
 

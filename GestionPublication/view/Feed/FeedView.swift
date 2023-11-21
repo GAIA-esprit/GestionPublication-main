@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct FeedView: View {
+
     @State private var showNewTweetview = false
+    @ObservedObject var postViewModel = PostViewModel()
     var body: some View {
         ZStack( alignment: .bottomTrailing){
         ScrollView {
             LazyVStack{
-                ForEach(0...20, id: \ .self  ){
-                    _ in   EarthWiseRowView(postViewModel: PostViewModel())
+                ForEach(postViewModel.posts) { post in
+                    EarthWiseRowView(author: post.author , iduser: post.iduser, content: post.content)
+                }
                         .padding()
                     
                     }
                 }
-            }
+        .onAppear{
+            postViewModel.fetchPosts()
+        }
+            
+            
+            
             Button{
                 showNewTweetview.toggle()
                 
@@ -41,7 +49,6 @@ struct FeedView: View {
                 NewTweetView()
             }
         }
-        
     }
 }
 
