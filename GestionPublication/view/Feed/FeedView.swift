@@ -16,7 +16,7 @@ struct FeedView: View {
         ScrollView {
             LazyVStack{
                 ForEach(postViewModel.posts) { post in
-                    EarthWiseRowView(author: post.author , iduser: post.iduser, content: post.content)
+                    EarthWiseRowView(author: post.author , iduser: post.iduser, content: post.content,id: post.id, liked: post.like, disliked: post.dislike)
                 }
                         .padding()
                     
@@ -33,7 +33,7 @@ struct FeedView: View {
                 
             } label: {
                 
-                Image(systemName: "magnifyingglass")
+                Image(systemName: "plus.circle.fill")
                     .resizable()
                     .renderingMode(.template)
                     .frame(width: 28 , height: 28)

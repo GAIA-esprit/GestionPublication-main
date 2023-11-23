@@ -4,6 +4,7 @@ class NetworkManager {
     static let shared = NetworkManager()
 
     private let baseURL = "http://localhost:3000/api" // Update with your backend URL
+   
 
     func getPosts(completion: @escaping (Result<[PostModel], Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)/posts") else {

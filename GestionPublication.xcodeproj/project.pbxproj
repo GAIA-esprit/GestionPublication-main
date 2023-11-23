@@ -39,6 +39,9 @@
 		94D186D22B0A8A5500A00BD8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D186D12B0A8A5500A00BD8 /* Network.swift */; };
 		94D186D62B0A8B7B00A00BD8 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D186D52B0A8B7B00A00BD8 /* AsyncImageView.swift */; };
 		94D186D92B0A8C6200A00BD8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 94D186D82B0A8C6200A00BD8 /* Alamofire */; };
+		E46C46072B0ED96700488D18 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C46062B0ED96700488D18 /* CommentViewModel.swift */; };
+		E46C46092B0EDBE900488D18 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C46082B0EDBE900488D18 /* CommentModel.swift */; };
+		E46C460B2B0EDEAD00488D18 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46C460A2B0EDEAD00488D18 /* CommentView.swift */; };
 		E4E685F22B0CEA2800FB2727 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E685F12B0CEA2800FB2727 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,9 @@
 		94C542982B0A91C000C197AA /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		94D186D12B0A8A5500A00BD8 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		94D186D52B0A8B7B00A00BD8 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		E46C46062B0ED96700488D18 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		E46C46082B0EDBE900488D18 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		E46C460A2B0EDEAD00488D18 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		E4E685F12B0CEA2800FB2727 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				94C542962B0A8DBE00C197AA /* PostModel.swift */,
+				E46C46082B0EDBE900488D18 /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +239,7 @@
 				225064ED2AF80D5C0039F927 /* EarthWiseRowView.swift */,
 				884F1DDB2AFFC27C00CBAF64 /* TextArea.swift */,
 				884F1DDD2AFFCC7200CBAF64 /* SearchBar.swift */,
+				E46C460A2B0EDEAD00488D18 /* CommentView.swift */,
 			);
 			path = EarthWise;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 				08AC3C1F2AFBDC62005F423B /* SideMenuViewModel.swift */,
 				081F72FF2AFBBA990012B029 /* EarthWiseFilterViewModel.swift */,
 				94C542982B0A91C000C197AA /* PostViewModel.swift */,
+				E46C46062B0ED96700488D18 /* CommentViewModel.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -358,13 +367,16 @@
 				225064EE2AF80D5C0039F927 /* EarthWiseRowView.swift in Sources */,
 				225064F62AF8167B0039F927 /* ProfileView.swift in Sources */,
 				08AC3C1E2AFBDB19005F423B /* UserStatview.swift in Sources */,
+				E46C460B2B0EDEAD00488D18 /* CommentView.swift in Sources */,
 				225064EC2AF80C5B0039F927 /* FeedView.swift in Sources */,
 				224FBD7E2AF69E50002DE691 /* Persistence.swift in Sources */,
 				884F1DDC2AFFC27D00CBAF64 /* TextArea.swift in Sources */,
 				224FBD772AF69E4F002DE691 /* ContentView.swift in Sources */,
+				E46C46072B0ED96700488D18 /* CommentViewModel.swift in Sources */,
 				94C542972B0A8DBE00C197AA /* PostModel.swift in Sources */,
 				55B484EC2B010F3000F6E049 /* MessageViewModel .swift in Sources */,
 				225064F22AF816530039F927 /* MessageView.swift in Sources */,
+				E46C46092B0EDBE900488D18 /* CommentModel.swift in Sources */,
 				081F73002AFBBA990012B029 /* EarthWiseFilterViewModel.swift in Sources */,
 				224FBD812AF69E50002DE691 /* GestionPublication.xcdatamodeld in Sources */,
 				E4E685F22B0CEA2800FB2727 /* NetworkManager.swift in Sources */,

@@ -177,7 +177,9 @@ extension ProfileView {
                     ScrollView {
                         LazyVStack{
                             ForEach(postViewModel.posts) { post in
-                                EarthWiseRowView(author: post.author , iduser: post.iduser, content: post.content)
+                                EarthWiseRowView(author: post.author , iduser: post.iduser, content: post.content, id: post.id,
+                                                 liked: post.like,
+                                                 disliked: post.dislike)
                             }
                             .padding()
                             

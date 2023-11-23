@@ -11,7 +11,12 @@ struct EarthWiseRowView: View {
     @State var author : String
     @State var iduser : String
     @State var content : String
-   
+    @State var id : String
+    @State var liked : Int
+    @State var disliked : Int
+    @State private var commentText: String = ""
+    @ObservedObject var postviewmodel : PostViewModel = PostViewModel()
+    
     
     
     var body: some View {
@@ -40,41 +45,36 @@ struct EarthWiseRowView: View {
         }
             HStack {
                 Button{
-                    
+                    liked = liked + 1
+                    postviewmodel.likedPost(id)
                 }label: {
                     Image(systemName: "heart")
-                               .font(.system(size: 24))
+                               .font(.system(size: 30))
                                .foregroundColor(.green)
+                    Text("\(liked)")
                     
                 }
                 
                 Spacer()
                 
                 Button{
-                    
+                    disliked = disliked + 1
+                    postviewmodel.dislikedPost(id)
+
                 }label: {
-                    Image(systemName: "arrow.2.squarepath")
-                               .font(.system(size: 24))
+                    Image(systemName: "hand.thumbsdown.fill")
+                               .font(.system(size: 30))
                                .foregroundColor(.green)
+                    Text("\(disliked)")
+
                 }
                 Spacer()
                 
-                Button{
-                    
-                }label: {
-                    Image(systemName: "text.bubble")
-                               .font(.system(size: 24))
-                               .foregroundColor(.green)
-                }
-                Spacer()
-                
-                Button {
-                    
-                }label: {
-                    Image(systemName: "bookmark")
-                                .font(.system(size: 24))
-                                .foregroundColor(.green)
-                }
+                NavigationLink(destination: CommentView(postId: id)) {
+                                 Image(systemName: "text.bubble")
+                                     .font(.system(size: 30))
+                                     .foregroundColor(.green)
+                             }
             }
             .padding()
             .foregroundColor(.gray)
@@ -88,7 +88,8 @@ struct EarthWiseRowView: View {
 
 struct EarthWiseRowView_Previews: PreviewProvider {
     static var previews: some View {
-        EarthWiseRowView(author: "yesser" , iduser: "@yesser", content: "hjsfdgfqhkjsdhkqrsk")
+        EarthWiseRowView(author: "yesser" , iduser: "@yesser", content: "hjsfdgfqhkjsdhkqrsk", id: "123123",liked: 1,
+        disliked: 0)
     }
 }
 
